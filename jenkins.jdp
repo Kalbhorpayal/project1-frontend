@@ -9,11 +9,11 @@ pipeline {
         }
         stage('build'){
             steps {
-                sh '''sudo apt update 
-                sudo apt install 
-                nodejs npm install
+                sh '''
+                sudo apt install nodejs 
+                node -v
                 sudo apt install npm
-                    ng build '''
+                ng build '''
             }
         }
         stage('deploy'){
