@@ -9,9 +9,7 @@ pipeline {
         }
         stage('build'){
             steps {
-                sh ''' sudo -S apt install nodejs -y
-                nvm install node
-                node --version  
+                sh ''' npm install
             ng build '''
             }
         }
