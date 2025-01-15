@@ -9,17 +9,14 @@ pipeline {
         }
         stage('build'){
             steps {
-                sh '''
-                sudo apt install nodejs 
-                node -v
-                sudo apt install npm
-                ng build '''
+                sh '''npm install
+                    ng build '''
             }
         }
         stage('deploy'){
             steps {
                 sh '''
-                    aws s3 cp --recursive dist/angular-frontend/ s3://0908-project1-frontend-bux/
+                    aws s3 cp --recursive dist/angular-frontend/ s3://0908-cbz-frontend-project-bux/
                 '''
             }
         }
